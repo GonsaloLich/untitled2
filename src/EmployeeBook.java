@@ -2,6 +2,7 @@ public class EmployeeBook {
     private final Employee[] employees;
     private final Integer DEPARTAMENT_SIZE = 5;
     private int size;
+    private int id;
 
     public EmployeeBook() {
         this.employees = new Employee[10];
@@ -9,6 +10,14 @@ public class EmployeeBook {
 
     public int getSize() {
         return this.size = size;
+    }
+
+    public int getId() {
+        return this.id = id;
+    }
+
+    public void setId(int id) {
+
     }
 
     // печать всех сотрудников
@@ -198,11 +207,11 @@ public class EmployeeBook {
     }
 
     // добавление сотрудника
-    public void addEmployee(String FIO, int department, int salary) {
+    public void addEmployee(String FIO, int department, int salary, int id) {
         if (size >= employees.length) {
             System.out.println("Нельзя добавить сотрудника, места нет");
         }
-        Employee newEmployee = new Employee(FIO, department, salary);
+        Employee newEmployee = new Employee(FIO, department, salary, id);
         employees[size++] = newEmployee;
     }
 

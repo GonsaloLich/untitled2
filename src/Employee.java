@@ -2,13 +2,17 @@ public class Employee {
     public final String FIO;
     public int department;
     public int salary;
+    public static int counter;
     public int id;
 
 
 
 
-    public Employee(String fio, int department, int salary) {
-        FIO = fio;
+    public Employee(String FIO, int department, int salary, int id) {
+        this.FIO = FIO;
+        this.department = department;
+        this.salary = salary;
+        id = ++counter;
     }
 
 
@@ -35,6 +39,10 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
